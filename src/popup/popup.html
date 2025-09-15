@@ -1,18 +1,24 @@
 <!DOCTYPE html>
+<!-- Popup: UI simplificada exibida quando o usuário clica no ícone da extensão. -->
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <title>Bootcamp Helper</title>
+    <!-- Estilos locais do popup (pequena UI isolada) -->
     <link rel="stylesheet" href="popup.css">
+    
 </head>
 <body>
     <h1>Bootcamp Helper</h1>
     <p>Clique para verificar o status do Service Worker.</p>
     
+    <!-- Botão que dispara o "ping" para o Service Worker; id usado por popup.js -->
     <button id="ping">Ping!</button>
     
+    <!-- Elemento onde exibimos o resultado da verificação (tempo de resposta ou erro) -->
     <div id="status"></div>
 
+    <!-- Script que envia a mensagem ao background e atualiza a UI -->
     <script src="popup.js"></script>
 </body>
 </html>

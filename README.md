@@ -4,9 +4,6 @@ Extensão inicial criada como parte do Bootcamp para praticar os conceitos do Ma
 
 ## Funcionalidades
 
-* Destaca todos os links em páginas do `developer.chrome.com`.
-* Permite ativar/desativar a funcionalidade através de uma página de opções.
-* Permite escolher a cor do destaque.
 * Popup para verificar o status do Service Worker.
 
 ## Como Instalar

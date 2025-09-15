@@ -1,21 +1,28 @@
+/* Popup specific styles
+   - Importa estilos globais compartilhados
+   - Mantém a UI pequena e centralizada para o popup do navegador */
 @import url('../styles/global.css');
 
+/* Tamanho fixo do popup para evitar overflow inesperado */
 body {
     width: 250px;
     text-align: center;
 }
 
+/* Títulos compactos para caber no popup */
 h1 {
     font-size: 18px;
     color: #333;
 }
 
+/* Parágrafos de explicação menores */
 p {
     font-size: 14px;
     color: #666;
     margin-bottom: 20px;
 }
 
+/* Botão de ação principal (ping) */
 #ping {
     background-color: #007bff;
     color: white;
@@ -32,6 +39,8 @@ p {
     background-color: #0056b3;
 }
 
+/* Área onde exibimos status/resultado do ping. Fonte monoespaçada para
+   facilitar leitura de timestamps */
 #status {
     margin-top: 15px;
     font-size: 12px;

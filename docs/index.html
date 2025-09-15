@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<!-- Página de documentação/marketing para a extensão. Contém instruções
+     de instalação e descreve a funcionalidade principal (ping entre popup
+     e service worker). Este arquivo não faz parte do código da extensão
+     em si, mas é útil para demonstrar/compartilhar o projeto. -->
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootcamp Helper - Extensão para Chrome</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #007bff; /* Um azul mais padrão para ferramenta de dev */
+            --text-color: #333;
+            --bg-color: #f8f9fa;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header {
+            text-align: center;
+            padding: 80px 20px;
+            background-color: white;
+            border-bottom: 1px solid #dee2e6;
+        }
+
+        .header h1 {
+            font-size: 3.5em;
+            margin: 0;
+            color: var(--text-color);
+        }
+
+        .header p {
+            font-size: 1.2em;
+            color: #6c757d;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 15px 30px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1em;
+            margin-top: 20px;
+            transition: background-color 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background-color: #0056b3;
+        }
+        
+        section {
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        h2 {
+            font-size: 2.5em;
+            margin-bottom: 40px;
+        }
+
+        .feature-showcase {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+            text-align: left;
+            background-color: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+        
+        .feature-text {
+            flex: 1;
+        }
+        
+        .feature-text h3 {
+            font-size: 1.8em;
+            margin-top: 0;
+        }
+
+        .feature-image {
+            flex: 1;
+            max-width: 400px;
+        }
+
+        .screenshot {
+            width: 100%;
+            border-radius: 8px;
+            border: 1px solid #dee2e6;
+        }
+        
+        .install-steps {
+            text-align: left;
+            max-width: 700px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 30px;
+            border-radius: 12px;
+        }
+
+        .install-steps code {
+            background-color: #e9ecef;
+            padding: 2px 6px;
+            border-radius: 4px;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #e9ecef;
+            margin-top: 60px;
+        }
+
+        @media (max-width: 768px) {
+            .feature-showcase {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="header">
+        <div class="container">
+            <h1>Bootcamp Helper</h1>
+            <p>Uma extensão modelo para aprender a testar a comunicação com o Service Worker no Manifest V3.</p>
+            <!-- O link abaixo aponta para um zip com a release; útil para distribuí-lo manualmente. -->
+            <a href="https://github.com/CatPy123/bootcamp2-chrome-ext--CatPy123-/archive/refs/tags/v1.0.zip" class="cta-button">Download da Extensão (.zip)</a>
+        </div>
+    </header>
+
+    <main>
+        <section id="features" class="container">
+            <h2>Funcionalidade Principal</h2>
+            <div class="feature-showcase">
+                <div class="feature-text">
+                    <h3>Teste de Comunicação "Ping"</h3>
+                    <p>A principal função desta extensão é demonstrar a comunicação essencial entre a interface do usuário (o popup) e o processo de background (o Service Worker).</p>
+                    <p>Ao clicar no botão "Ping!", o popup envia uma mensagem para o Service Worker, que responde confirmando que está ativo e funcionando. Isso é crucial para depurar e garantir que sua extensão está operante.</p>
+                    <ul>
+                        <li><strong>Tecnologia:</strong> Demonstra o uso de <code>chrome.runtime.sendMessage</code>.</li>
+                        <li><strong>Utilidade:</strong> Serve como um "health check" para o coração da sua extensão.</li>
+                        <li><strong>Objetivo:</strong> Perfeito para desenvolvedores que estão aprendendo os fundamentos do Manifest V3.</li>
+                    </ul>
+                </div>
+                <div class="feature-image">
+                    <!-- A imagem abaixo é apenas ilustrativa: mostra o popup da extensão. -->
+                    <img src="screenshot-popup.png" alt="Screenshot do popup da extensão" class="screenshot">
+                </div>
+            </div>
+        </section>
+
+        <section id="install" class="container">
+            <h2>Como Instalar</h2>
+            <div class="install-steps">
+                <ol>
+                    <li>Faça o download do arquivo <code>.zip</code> clicando no botão no topo da página.</li>
+                    <li>Descompacte o arquivo em uma pasta permanente no seu computador.</li>
+                    <li>Abra o Google Chrome e navegue para <code>chrome://extensions</code>.</li>
+                    <li>No canto superior direito, ative o <strong>"Modo de desenvolvedor"</strong>.</li>
+                    <li>Clique no botão <strong>"Carregar sem compactação"</strong> que apareceu.</li>
+                    <li>Selecione a pasta que você descompactou no passo 2.</li>
+                    <li>Pronto! O ícone da "Bootcamp Helper" deve aparecer na sua barra de extensões.</li>
+                </ol>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Bootcamp Helper. Criado como parte de um projeto de aprendizado.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
