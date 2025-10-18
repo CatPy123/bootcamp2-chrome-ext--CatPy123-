@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<!-- Página de Opções: permite ao usuário alterar preferências persistidas em chrome.storage.sync -->
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Opções do Bootcamp Helper</title>
+    <!-- Styles: arquivo local opcional para a página de opções -->
+    <link rel="stylesheet" href="options.css">
+</head>
+<body>
+    <h1>Opções do Bootcamp Helper</h1>
+
+    <!--
+        A estrutura abaixo corresponde às chaves salvas em storage:
+        - featureEnabled -> boolean (id: featureEnabled)
+        - favoriteColor   -> string (id: highlightColor)
+        O script `options.js` é responsável por ler/escrever esses valores.
+    -->
+    <div class="option">
+        <label>
+            <input type="checkbox" id="featureEnabled">
+            Ativar destaque de links
+        </label>
+    </div>
+
+    <div class="option">
+        <label for="highlightColor">
+            Cor do destaque:
+            <input type="color" id="highlightColor" value="#ec0089">
+        </label>
+    </div>
+
+    <!-- Botão que dispara a persistência das opções através de options.js -->
+    <button id="save">Salvar Opções</button>
+    <div id="status"></div>
+
+    <script src="options.js"></script>
+</body>
+</html>

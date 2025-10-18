@@ -1,0 +1,7 @@
+/* Estilos globais compartilhados entre popup e páginas de opções.
+   Mantém fonte e espaçamento padrão para a UI da extensão. */
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    padding: 15px;
+    background-color: #f9f9f9;
+}
