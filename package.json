@@ -6,10 +6,13 @@
     "build": "node scripts/build-extension.mjs",
     "test:e2e": "playwright test --reporter=list,html",
     "test": "npm run build && npm run test:e2e",
+    "lighthouse": "lighthouse src/popup/popup.html --output=html --output-path=./lighthouse-report.html && open ./lighthouse-report.html",
+    "lighthouse:ci": "npm run build && lighthouse src/popup/popup.html --output=json --output-path=./lighthouse-popup.json && lighthouse src/options/options.html --output=json --output-path=./lighthouse-options.json",
     "ci": "npm ci && npm run test"
   },
   "devDependencies": {
     "@playwright/test": "^1.46.0",
-    "archiver": "^7.0.0"
+    "archiver": "^7.0.0",
+    "lighthouse": "^11.0.0"
   }
 }
